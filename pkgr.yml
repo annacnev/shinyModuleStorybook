@@ -1,0 +1,31 @@
+Version: 1
+
+Packages:
+  - rlang
+  - tidyverse
+  - rsconnect
+  - shiny 
+  - shinytest
+  - shinyWidgets
+  - shinydashboard
+  - shinydashboardPlus
+  - shinyFeedback
+  - shinyjs
+  - shinyBS
+  - RCurl
+  - roxygen2
+  - config
+  - logrrr
+  - testthat
+  - collapsibleTree
+  - mrgsolve
+  - DT
+  - data.table
+  
+Repos:
+  - MPN: https://mpn.metworx.com/snapshots/stable/2021-02-01
+  - CRAN: https://cran.rstudio.com
+      
+Lockfile:
+    Type: renv
+

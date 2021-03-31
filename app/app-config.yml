@@ -1,0 +1,9 @@
+default:
+  version: 0.0.1
+  is_production: false
+
+production: 
+  is_production: true
+
+rsconnect: 
+  is_production: true

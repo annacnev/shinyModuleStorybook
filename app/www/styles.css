@@ -1,0 +1,185 @@
+
+body {
+    font-family: "Montserrat";
+    font-size:16px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat";
+}
+
+.main-header .logo {
+     font-family:"Montserrat", sans-serif ;
+     font-weight:bold;
+     letter-spacing:-1px; 
+     font-size:25px; 
+     color:#ffffff;
+     height: 55px;
+}
+
+.skin-green .main-header > .logo {
+     color:#ffffff;
+     border-bottom:0 solid transparent;
+     border-right:1px solid #2e89c9;
+}
+
+ .skin-green .main-header .navbar .sidebar-toggle {
+     color:#ffffff;
+     min-height: 55px;
+}
+
+ .skin-green .main-header .navbar .sidebar-toggle:hover {
+     color:white;
+     background:#fff 
+}
+
+ .skin-green .main-header .navbar .navbar-custom-menu .navbar-nav > li > a, .skin-green .main-header .navbar .navbar-right > li > a {
+     border-left:1px solid green;
+     border-right-width:0;
+     min-height: 55px;
+}
+
+
+ .nav-tabs-custom > .nav-tabs > li.active {
+     border-top-color:#616365 
+}
+
+
+ .nav-tabs-custom {
+     box-shadow:0px 0px 0px lightgrey 
+}
+
+ .skin-green .left-side, .skin-green .main-sidebar, .skin-green .wrapper {
+     background-color:#727477;
+     box-shadow: inset 0px 110px 120px 2px #000000;
+}
+
+ .skin-green .sidebar-menu > li.active > a, .skin-green .sidebar-menu > li:hover > a {
+     color:white;
+     background:#606164;
+     border-left-color:green;
+     font-size:17px;
+}
+
+ .skin-green .sidebar-menu > li > .treeview-menu {
+     margin:0 1px; 
+     color: white;
+     background:#8a8c8f;
+     box-shadow:inset 0px 0px 7px #000000;
+     padding-bottom:2px;
+}
+
+ .skin-green .sidebar-menu > li > a{
+     color:white;
+ }
+
+
+.skin-green .sidebar-menu .treeview-menu>li>a {
+    color: white;
+    font-size:15px;
+}
+
+.treeview-menu {
+     margin:0 0px; 
+     color: white;
+     background:#8a8c8f;
+     box-shadow:inset 0px 0px 7px #000000;
+     padding-bottom:2px;
+     padding-left: 0px;
+}
+
+.navbar-nav > .messages-menu > .dropdown-menu, .navbar-nav > .notifications-menu > .dropdown-menu, .navbar-nav > .tasks-menu > .dropdown-menu {
+    width: 400px;
+    padding: 0;
+    margin: 10px;
+    top: 100%;
+    background-color: #fefefe;
+        box-shadow: 10px 10px 10px darkgrey;
+    color:white;
+}
+
+
+.navbar-nav > .messages-menu > .dropdown-menu > li.header, .navbar-nav > .notifications-menu > .dropdown-menu > li.header, .navbar-nav > .tasks-menu > .dropdown-menu > li.header {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #2e89c9;
+        padding: 7px 10px;
+    border-bottom: 1px solid #2e89c9e6;
+    color: #ffffff;
+        font-size: 14px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu, .navbar-nav > .notifications-menu > .dropdown-menu > li .menu, .navbar-nav > .tasks-menu > .dropdown-menu > li .menu {
+    max-height: 1200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+    color: white;
+    overflow: hidden;
+    white-space: normal;
+}
+
+
+.main-footer {
+    background: #ecf0f5;
+        padding: 15px;
+    color: #444;
+        border-top: 1px solid #d2d6de;
+}
+
+.sweet-alert {
+    font-family: "Montserrat";
+}
+.sweet-alert p {
+    font-family: "Montserrat";
+}
+.navbar-nav>li>.dropdown-menu {
+    width:460px;
+}
+
+.skin-green .sidebar-menu > li > a {
+    color: white;
+    font-size:17px;
+    padding: 25px 15px 25px 15px;
+    display: block;
+}
+
+
+/** collapsibleTree styling **/
+
+.collapsibleTree .node {
+  cursor: pointer;
+}
+
+.collapsibleTree .node circle {
+  fill: #fff;
+  stroke: #000;
+}
+
+.collapsibleTree .node text {
+  font-size: 16px;
+  font-family: "Montserrat";
+}
+
+.collapsibleTree .link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.collapsibleTree div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 3px;
+    font-size: 16px;
+    font-family: "Montserrat";
+    background: #fff;
+    border: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    pointer-events: none;
+}

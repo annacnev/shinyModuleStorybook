@@ -1,0 +1,38 @@
+---
+title: "Good Practices"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Hello!
+**This app has two main purposes:**
+ * To outline best practices for R shiny development
+ * To function as a database for frequently used modules
+  * Send them to @BarrettK if you think others could benefit from modules you've made!
+
+
+## Best Practices
+
+This includes a proper file stucture and working directory setup, as well as techniques Metrum is striving to make a standard for R shiny development projects
+  - use modules where warranted
+    - talk about when and why to use them. 
+    - Metrum's goal
+  - Testing
+    - shinytest
+    - testserver() (shiny package)
+    - testthat for non-reactive objects
+  - More?
+  
+<hr>
+
+
+**To do:**
+* logrrr and confic
+* Good practices (this page)
+* add/create modules commonly used at Metrum
+* Get feedback on clarity and other info that could be helpful to include
+* ...more?
