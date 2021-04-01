@@ -8,31 +8,49 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## Hello!
-**This app has two main purposes:**
- * To outline best practices for R shiny development
- * To function as a database for frequently used modules
-  * Send them to @BarrettK if you think others could benefit from modules you've made!
+## Purpose
 
+The purpose of this app is to function as a database for shiny modules for internal use at **Metrum**. 
 
-## Best Practices
+The goal is to approximate the functionality of [this example](https://storybook.js.org/), whereby you can view, test, and live-modify the code of each module to get a feel for its flexibility. Developers can help populate the list of available modules, as well as download the isolated files for use in future apps. 
 
-This includes a proper file stucture and working directory setup, as well as techniques Metrum is striving to make a standard for R shiny development projects
-  - use modules where warranted
-    - talk about when and why to use them. 
-    - Metrum's goal
-  - Testing
-    - shinytest
-    - testserver() (shiny package)
-    - testthat for non-reactive objects
-  - More?
-  
+We often rewrite similar UIs for different applications. By capturing modules used in previous apps we can save time in future projects where similar modules are warranted.
+
 <hr>
 
+### Downloading Modules
 
-**To do:**
-* logrrr and confic
-* Good practices (this page)
-* add/create modules commonly used at Metrum
-* Get feedback on clarity and other info that could be helpful to include
-* ...more?
+* You can download a **zip file** of any of the available modules using the button on the sidebar
+* Some 'modules' may actually consist of *numerous* modules
+* For each 'module', you'll find the relevant files required to run them in isolation, including a list of required packages and a sample `app.R`.
+    + Ex: Event Table 1 Module includes:
+        - `eventTable.R`
+        - `tableButtons.R`
+        - `eventTable1-pkgr_req.R`
+        - `data/base_table.RDS`
+* Note that zipping the files deletes the sub-folders, so you may have to recreate them for some modules to work
+
+<hr>
+
+### Uploading/Submitting Modules
+
+* For now you can submit modules to Kyle Barrett. In the future there will be an uploading feature.
+* Before submitting a module, please make sure it can be run in isolation using the following format:
+    ```
+    library(shiny)
+    library(tidyverse)
+    library(DT)
+    library(data.table)
+    library(etc...)
+
+    # sample app.R ------------------------------------------------------------
+    ui <- fluidPage(
+      eventTable_UI("event_table")
+    )
+
+    server <- function(input, output, session) {
+        eventTable_Server("event_table")
+    }
+
+    shinyApp(ui, server)
+    ```

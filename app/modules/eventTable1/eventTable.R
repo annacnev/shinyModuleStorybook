@@ -2,7 +2,7 @@
 rename_list <- c("Time (Day)"="time", "EA Diluent A Suspension Dose (mg)"="diluentA_dose",
                  "EA Castor Oil Solution Dose (mg)"="castorOil_dose", "Additional Doses"="addl",
                  "Interval Between Doses"="ii")
-
+data_cache_loc <- file.path(dirname(rstudioapi::getActiveDocumentContext()$path),"data")
 # Module UI Function
 eventTable_UI <- function(id) {
   ns <- NS(id)
@@ -34,7 +34,7 @@ eventTable_Server <- function(id) {
       
       # Reactive table 
       rv <- reactiveValues()
-      rv$Data <- data.table(readRDS("data/base_table.RDS")) # needs to be data.table for row indexing
+      rv$Data <- data.table(readRDS(file.path(data_cache_loc,"base_table.RDS"))) # needs to be data.table for row indexing
       
       observeEvent(input$eventUpload,{
         file <- input$eventUpload
@@ -51,22 +51,24 @@ eventTable_Server <- function(id) {
       
       # Contains table and buttons
       output$eventTable_body <- renderUI({
-        fluidPage(
-          column(6,
-                 fileInput(ns("eventUpload"), "Upload your own event table?", accept = c(".csv",".RDS"),multiple = F),
-                 helpText("Add or Remove Dosing Events")),
-          column(6,
-                 HTML('<div class="btn-group" role="group" aria-label="Basic example" style = "padding:10px">'),
-                 div(style="display:inline-block;width:30%;text-align: center;",
-                     actionButton(inputId = ns("Add_row_head"),label = "Add")),
-                 div(style="display:inline-block;width:30%;text-align: center;",
-                     actionButton(inputId = ns("mod_row_head"),label = "Edit")),
-                 div(style="display:inline-block;width:30%;text-align: center;",
-                     actionButton(inputId = ns("Del_row_head"),label = "Delete")),
-                 HTML('</div>')),
-          
-          column(12, dataTableOutput(ns("eventTable"))),
-          tags$script(sprintf("
+        tagList(
+          fluidRow(
+            column(4,
+                   helpText("Add or Remove Dosing Events")),
+            column(4,
+                   HTML('<div class="btn-group" role="group" aria-label="Basic example" style = "padding:10px">'),
+                   div(style="display:inline-block;width:30%;text-align: center;",
+                       actionButton(inputId = ns("Add_row_head"),label = "Add")),
+                   div(style="display:inline-block;width:30%;text-align: center;",
+                       actionButton(inputId = ns("mod_row_head"),label = "Edit")),
+                   div(style="display:inline-block;width:30%;text-align: center;",
+                       actionButton(inputId = ns("Del_row_head"),label = "Delete")),
+                   HTML('</div>')),
+            column(4,
+                   fileInput(ns("eventUpload"), "Upload your own event table?", accept = c(".csv",".RDS"),multiple = F))
+          ),
+            column(12, dataTableOutput(ns("eventTable"))),
+            tags$script(sprintf("
                               $(document).on('click', '#%s button', function () {
                               Shiny.onInputChange('%s',this.id);
                               Shiny.onInputChange('%s', Math.random()) });", 

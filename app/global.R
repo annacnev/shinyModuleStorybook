@@ -24,7 +24,11 @@ for(function.i in functions){
 # source modules and module functions (to keep modules organized)
 modules <- list.files("modules", recursive = T)
 for(module.i in modules){
-  source(file.path("modules", module.i))
+  if(file_ext(module.i)=="R"){
+    source(file.path("modules", module.i))
+  }else{
+    next
+  }
 }
 
 # source scripts
